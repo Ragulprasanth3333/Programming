@@ -19,5 +19,8 @@ def test_cases():
     assert value("What's up?") == 100
     assert value("good morning!") == 100
 
+
+
+
 if __name__ == "__main__":
     main()
