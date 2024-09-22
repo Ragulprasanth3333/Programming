@@ -7,13 +7,13 @@ struct node {
     struct node *next;
 };
 
-struct node *tail = NULL;
+struct node *tail = 0;
 
 void circular_ln() {
     struct node *newnode;
     newnode = (struct node*)malloc(sizeof(struct node));
 
-    if (newnode == NULL) {
+    if (newnode == 0) {
         printf("Memory allocation failed.\n");
         return;
     }
@@ -21,7 +21,7 @@ void circular_ln() {
     printf("Enter the data: ");
     scanf("%d", &newnode->data);
 
-    if (tail == NULL) {
+    if (tail == 0) {
         // When the list is empty, initialize tail
         tail = newnode;
         tail->next = tail;  // Points to itself, making it circular
@@ -34,7 +34,7 @@ void circular_ln() {
 }
 
 void printls() {
-    if (tail == NULL) {
+    if (tail == 0) {
         printf("The list is empty.\n");
         return;
     }

@@ -7,14 +7,14 @@ struct node {
     struct node *next;
 };
 
-struct node *tail = NULL;
+struct node *tail = 0;
 int count=0;
 
 void circular_ln() {
     struct node *newnode;
     newnode = (struct node*)malloc(sizeof(struct node));
 
-    if (newnode == NULL) {
+    if (newnode == 0) {
         printf("Memory allocation failed.\n");
         return;
     }
@@ -22,7 +22,7 @@ void circular_ln() {
     printf("Enter the data: ");
     scanf("%d", &newnode->data);
 
-    if (tail == NULL) {
+    if (tail == 0) {
         // When the list is empty, initialize tail
         tail = newnode;
         tail->next = tail;  // Points to itself, making it circular
@@ -35,7 +35,7 @@ void circular_ln() {
 }
 
 void printls() {
-    if (tail == NULL) {
+    if (tail == 0) {
         printf("The list is empty.\n");
         return;
     }
@@ -51,7 +51,7 @@ void printls() {
     printf("(circular back to head)\n");
 }
 void delbeg() {
-    if (tail == NULL) {
+    if (tail == 0) {
         printf("The list is empty.\n");
         return;
     }
@@ -59,7 +59,7 @@ void delbeg() {
     if (tail->next == tail) {
         printf("The list has only one node. Deleting it.\n");
         free(tail);
-        tail = NULL;  
+        tail = 0;  
         return;
     }
 
@@ -72,7 +72,7 @@ void delend()
 {
     struct node *temp;
     temp = tail;
-    if(tail==NULL)
+    if(tail==0)
     {
         printf("The list is empty ");
         return;
@@ -81,7 +81,7 @@ void delend()
     {
         printf("There is only one node ");
         free(tail);
-        tail=NULL;
+        tail=0;
         return;
     }
     else
@@ -102,7 +102,7 @@ void delend()
 
 void delatpos(int pos)
 {
-    if (tail == NULL)
+    if (tail == 0)
     {
         printf("The list is empty");
         return;
@@ -116,7 +116,7 @@ void delatpos(int pos)
     if(tail->next==tail)
     {
         free(tail);
-        tail=NULL;
+        tail=0;
         count-=1;
         return;
     }
@@ -133,7 +133,7 @@ void delatpos(int pos)
             delend();
             return;
         }
-        struct node *prev=NULL,*temp=tail->next;
+        struct node *prev=0,*temp=tail->next;
         int i = 1;
         for (i;i<pos;i+=1)
         {
