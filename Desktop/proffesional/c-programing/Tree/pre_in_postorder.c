@@ -12,7 +12,7 @@ struct node * create()
     int x;
     struct node* newnode;
     newnode = (struct node *)malloc(sizeof(struct node));
-    printf("Enter data or -1  ");
+    printf("Enter data or -1 : ");
     scanf("%d",&x);
     if(x==-1)
     {
@@ -60,10 +60,10 @@ void main()
 {
     struct node *root;
     root = create();
-    printf("\npreorder traversal is ");
+    printf("\npreorder traversal is : ");
     preorder(root);
-    printf("\ninorder traversal is ");
+    printf("\ninorder traversal is : ");
     inorder(root);
-    printf("\npostorder traversal is ");
+    printf("\npostorder traversal is : ");
     postorder(root);
 }
