@@ -12,6 +12,14 @@ void loop()
   {
     data = Serial.read();
     Serial.println(data);
+    if(data == 'A')
+    {
+      digitalWrite(led,HIGH);
+    }
+    if(data == 'B')
+    {
+      digitalWrite(led,LOW);
+    }
   }
   
 }

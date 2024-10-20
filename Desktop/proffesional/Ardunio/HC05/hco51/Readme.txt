@@ -39,22 +39,26 @@ This project demonstrates how to control a red LED using an Arduino Uno through 
 ```cpp
 #include <Arduino.h>
 
-int led = 13;
-char data;
-
-void setup() {
-  pinMode(led, OUTPUT);
-  Serial.begin(9600); // Initialize Bluetooth serial communication
+int led = 13 ,data;
+void setup()
+{
+  pinMode(13,OUTPUT);
+  Serial.begin(9600);
 }
-
-void loop() {
-  if (Serial.available() > 0) {
-    data = Serial.read(); // Read the incoming data
-    if (data == '1') {
-      digitalWrite(led, HIGH); // Turn the LED on
-    } else if (data == '0') {
-      digitalWrite(led, LOW);  // Turn the LED off
+void loop()
+{
+  while (Serial.available()>0)
+  {
+    data = Serial.read();
+    Serial.println(data);
+    if(data == 'A')
+    {
+      digitalWrite(led,HIGH);
     }
-    Serial.println(data); // Echo the received data for debugging
+    if(data == 'B')
+    {
+      digitalWrite(led,LOW);
+    }
   }
+  
 }
