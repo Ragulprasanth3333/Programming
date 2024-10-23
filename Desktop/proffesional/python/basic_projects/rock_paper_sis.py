@@ -34,5 +34,9 @@ def play_game():
     result = determine_winner(user_choice, computer_choice)
     print(result)
 
+
+
+
+
 if __name__ == '__main__':
     play_game()
