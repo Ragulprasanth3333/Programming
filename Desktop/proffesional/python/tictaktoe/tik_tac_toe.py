@@ -36,10 +36,18 @@ def player_move(board, player):
         except (ValueError, IndexError):
             print("Invalid input. Enter a number between 1 and 9.")
 
+
+
+
+
 def ai_move(board):
     empty_positions = get_empty_positions(board)
     row, col = random.choice(empty_positions)
     board[row][col] = "O"
+
+
+
+
 
 def tic_tac_toe():
     print("Welcome to Tic-Tac-Toe!")
