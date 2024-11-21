@@ -1,9 +1,12 @@
 import random
 
+
 def print_board(board):
     for row in board:
         print("|".join(row))
         print("-" * 5)
+
+
 
 def check_winner(board, player):
     # Check rows, columns, and diagonals for a win
@@ -17,11 +20,17 @@ def check_winner(board, player):
         return True
     return False
 
+
+
 def is_draw(board):
     return all(cell != " " for row in board for cell in row)
 
+
+
 def get_empty_positions(board):
     return [(i, j) for i in range(3) for j in range(3) if board[i][j] == " "]
+
+
 
 def player_move(board, player):
     while True:
@@ -35,8 +44,6 @@ def player_move(board, player):
                 print("Position already taken. Try again.")
         except (ValueError, IndexError):
             print("Invalid input. Enter a number between 1 and 9.")
-
-
 
 
 
